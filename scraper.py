@@ -6,7 +6,7 @@ import time
 def scrape_shine(max_pages=5):
     jobs = []
     for page in range(1, max_pages+1):
-        url = f"https://www.shine.com/job-search/it-jobs-{page}?q=it&qActual=it"
+        url = f"https://www.shine.com/job-search/it-jobs-%7Bpage%7D?q=it&qActual=it&farea=1313&farea=4530&farea=4528&farea=4429&farea=1405&farea=4560&farea=2801&farea=2803&farea=4526&findustry=18&findustry=81"
         domain = url.split('/')[2].split('.')[1]
         print(f"Scraping Shine page {page}: {url}")
         response = requests.get(url)
