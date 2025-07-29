@@ -1,13 +1,13 @@
-from flask import Flask
-from flask_cors import CORS
-
-app = Flask(__name__)
-CORS(app)
-
 from flask import Flask, jsonify
+from flask_cors import CORS
 from scraper import get_all_technical_fresher_jobs
 
 app = Flask(__name__)
+CORS(app)  # ✅ CORS now applied to the correct app
+
+@app.route("/")
+def home():
+    return jsonify({"message": "Welcome to Fresher Jobs Scraper API"})
 
 @app.route("/scrape-jobs", methods=["GET"])
 def scrape_jobs():
