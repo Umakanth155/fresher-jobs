@@ -1,3 +1,9 @@
+from flask import Flask
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
 from flask import Flask, jsonify
 from scraper import get_all_technical_fresher_jobs
 
